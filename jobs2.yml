@@ -5,4 +5,4 @@
   tasks:      
     - name: Display captured facts
       debug:
-        var: my_facts
+        msg: "{{ my_facts }}"
