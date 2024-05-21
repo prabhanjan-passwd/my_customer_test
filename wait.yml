@@ -4,4 +4,4 @@
   tasks:
     - name: Pause execution for 40 seconds
       wait_for:
-        timeout: 40
+        timeout: 200
