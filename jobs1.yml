@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: yes  # This enables fact gathering
+  tasks:
+    - name: Capture Ansible facts
+      set_fact:
+        my_facts: "{{ ansible_facts }}"
+      
+    - name: Display captured facts
+      debug:
+        var: my_facts
