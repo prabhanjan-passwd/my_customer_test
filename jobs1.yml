@@ -1,12 +1,12 @@
 ---
 - hosts: all
-  gather_facts: yes  # This enables fact gathering
   no_log: True
   tasks:
     - name: Capture Ansible facts
       set_fact:
-        my_facts: "{{ ansible_facts }}"
+        data:
+             my_facts: "{{ ansible_facts }}"
       
     - name: Display captured facts
       debug:
-        msg: my_facts
+        msg: "{{ my_facts }}"
