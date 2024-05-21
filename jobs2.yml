@@ -1,7 +1,6 @@
 ---
 - hosts: all
   gather_facts: yes  # This enables fact gathering
-  no_log: True
   tasks:      
     - name: Display captured facts
       debug:
