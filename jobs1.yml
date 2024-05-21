@@ -9,4 +9,4 @@
       
     - name: Display captured facts
       debug:
-        msg: "{{ my_facts }}"
+        var: my_facts
