@@ -1,7 +1,15 @@
----
-- hosts: all
-  gather_facts: yes  # This enables fact gathering
-  tasks:      
-    - name: Display captured facts
+- name: Display Ansible Facts
+  hosts: all
+  tasks:
+    - name: Read ansible facts file
+      slurp:
+        src: /tmp/ansible_facts.json
+      register: facts_file
+
+    - name: Convert facts to JSON
+      set_fact:
+        ansible_facts: "{{ facts_file.content | b64decode | from_json }}"
+
+    - name: Display Ansible facts
       debug:
-        msg: "{{ my_facts }}"
+        var: ansible_facts
