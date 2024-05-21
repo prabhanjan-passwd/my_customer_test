@@ -1,0 +1,7 @@
+---
+- name: Wait for 40 seconds
+  hosts: all
+  tasks:
+    - name: Pause execution for 40 seconds
+      wait_for:
+        timeout: 40
