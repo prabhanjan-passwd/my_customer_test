@@ -1,0 +1,11 @@
+- hosts: localhost
+  gather_facts: no
+  pre_tasks:
+
+    - name: Print the response 
+      command: "ls -l"
+      register: response
+
+    - name: Print the response 
+      debug: 
+        msg: "{{ response.stdout | type_debug }}"
